@@ -15,14 +15,11 @@ class ImageSearchViewController: UIViewController, UISearchBarDelegate, UICollec
   var resultsCollectionView: UICollectionView!
   var dataSource: UICollectionViewDiffableDataSource<Section, RemoteImage>!
   let giphySearchController = GiphySearchController()
-  //let imageStore = ImageStore()
   var quickLookObserver: NSKeyValueObservation?
   var typeSearchDelayTimer: Timer?
 
   override func loadView() {
     super.loadView()
-
-    ImagePipeline.Configuration.isAnimatedImageDataEnabled = true
 
     searchBar.placeholder = "Search Giphy…"
     searchBar.delegate = self
